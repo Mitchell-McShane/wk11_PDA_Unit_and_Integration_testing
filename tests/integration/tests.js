@@ -74,4 +74,12 @@ describe('calculator functionality', function() {
     expect(running_total.getAttribute('value')).to.eventually.equal('6553600000000');
   })
 
+  it('should return undefined if divided by 0', function(){
+    element(by.css('#number4')).click();
+    element(by.css('#operator_divide')).click();
+    element(by.css('#number0')).click();
+    element(by.css('#operator_equals')).click();
+    expect(running_total.getAttribute('value')).to.eventually.equal('undefined');
+  })
+
 });
